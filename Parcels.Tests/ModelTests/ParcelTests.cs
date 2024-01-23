@@ -17,7 +17,7 @@ namespace Parcel.Tests
     }
 
     [TestMethod]
-    public void GetProperties_ReturnPackagePropertyValues_Int()
+    public void GetProperties_ReturnPackagePropertyValues_Dictionary()
     {
       Package newPackage = new Package(propDictionary);
       Dictionary<string, int> result = newPackage.Properties;
@@ -25,13 +25,21 @@ namespace Parcel.Tests
     }
 
     [TestMethod]
-    public void SetProperties_SetValuesOfProperties_Int()
+    public void SetProperties_SetValuesOfProperties_Dictionary()
     {
       Package newPackage = new Package(propDictionary);
       Dictionary<string, int> newProperties = new Dictionary<string, int>() {{"height", 20}, {"length", 10}, {"width", 4}, {"weight", 10}};
       newPackage.Properties = newProperties;
       Dictionary<string, int> result = newPackage.Properties;
       CollectionAssert.AreEqual(newProperties, result);
+    }
+
+    [TestMethod]
+    public void Volume_MultiplyPropertiesToFindVolume_Int()
+    {
+      Package newPackage = new Package(propDictionary);
+      int result = 100;
+      Assert.AreEqual(newPackage.Volume(), result);
     }
   }
 }

@@ -9,5 +9,10 @@ namespace Parcel.Models
     {
       Properties = properties;
     }
+
+    public int Volume()
+    {
+     return (Properties["height"])*(Properties["length"])*(Properties["width"]);
+    }
   }
 }
