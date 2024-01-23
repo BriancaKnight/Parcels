@@ -5,9 +5,7 @@ namespace Parcel.Controllers
 {
   public class HomeController : Controller
   {
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Home() { return View(); }
-
-    [Route("")]
   }
 }
