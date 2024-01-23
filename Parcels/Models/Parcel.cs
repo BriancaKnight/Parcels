@@ -9,15 +9,14 @@ namespace Parcel.Models
     {
       Properties = properties;
     }
-
     public int Volume()
     {
-     return (Properties["height"])*(Properties["length"])*(Properties["width"]);
+     return Properties["height"] * Properties["length"] * Properties["width"];
     }
 
     public double CostToShip()
     {
-      return (Properties["weight"]*(0.25)) + (Volume()*(0.25));
+      return (Properties["weight"] * 0.25) + (Volume() * 0.25);
     }
   }
 }
