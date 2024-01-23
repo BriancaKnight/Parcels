@@ -1,9 +1,11 @@
+using System.Collections.Generic;
+
 namespace Parcel.Models
 {
   public class Package
   {
-    public int[] Properties { get; set; }
-    public Package(int[] properties)
+    public Dictionary<string, int> Properties { get; set; }
+    public Package(Dictionary<string, int> properties)
     {
       Properties = properties;
     }
