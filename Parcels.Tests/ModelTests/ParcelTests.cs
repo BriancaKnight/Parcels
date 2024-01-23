@@ -41,5 +41,15 @@ namespace Parcel.Tests
       int result = 100;
       Assert.AreEqual(newPackage.Volume(), result);
     }
+
+    [TestMethod]
+    public void CostToShip_ReturnsCostOfShipping_Double()
+    {
+      Package newPackage = new Package(propDictionary);
+      int volume = newPackage.Volume();
+      int weight = newPackage.Properties["weight"];
+      double result = (0.25 * (weight)) + (0.25 * (volume)); // 27.50
+      Assert.AreEqual(newPackage.CostToShip(), result);
+    }
   }
 }

@@ -14,5 +14,10 @@ namespace Parcel.Models
     {
      return (Properties["height"])*(Properties["length"])*(Properties["width"]);
     }
+
+    public double CostToShip()
+    {
+      return (Properties["weight"]*(0.25)) + (Volume()*(0.25));
+    }
   }
 }
